@@ -4,40 +4,80 @@ do {
     if (product !== 0) {
         switch (product) {
             case 1:
-                tipo = Number(prompt("¿De que tipo lo desea? \n 1.Light 2.Zero 3.Normal"))
-                precio = 100
-                switch (tipo) {
-                    case 1:
-                        precio = precio * 1.21
-                        do {
-                            pago = Number(prompt("Debe pagar: " + precio + "$"))
-                            if (pago < precio) {
-                                precio = precio - pago
-                            } else if (pago > precio) {
-                                vuelto = precio - pago
-                                alert("Su vuelto es de: " + (-vuelto) + "$")
-                                alert("Disfrute su producto")
-                                break;
-                            } else if (pago === precio) {
-                                pago = precio - pago
-                                alert("Disfrute su producto")
-                                break;
-                            } else {
-                                alert("ERROR")
-                            }
-                        } while (pago !== 0);
-                        break;
-                    case 2:
-                        precio = precio * 1.5
-                        pago = Number(prompt("Debe pagar: " + precio + "$"))
-                        break;
-                    case 3:
-                        pago = Number(prompt("Debe pagar: " + precio + "$"))
-                        break;
-                    default:
-                        alert("ERROR")
-                        break;
-                }
+                do {
+                    precio = 100
+                    tipo = Number(prompt("¿De que tipo lo desea? \n 1.Light 2.Zero 3.Normal 0.Volver"))
+                    switch (tipo) {
+                        case 1:
+                            precio = precio * 1.21
+                            do {
+                                pago = Number(prompt("Debe pagar: " + precio + "$"))
+                                if (pago < precio) {
+                                    precio = precio - pago
+                                } else if (pago > precio) {
+                                    vuelto = precio - pago
+                                    alert("Su vuelto es de: " + (-vuelto) + "$")
+                                    alert("Disfrute su producto")
+                                    break;
+                                } else if (pago === precio) {
+                                    pago = precio - pago
+                                    alert("Disfrute su producto")
+                                    break;
+                                } else {
+                                    alert("ERROR")
+                                }
+                            } while (pago !== 0);
+                            tipo = 0
+                            break;
+                        case 2:
+                            precio = precio * 1.5
+
+                            do {
+                                pago = Number(prompt("Debe pagar: " + precio + "$"))
+                                if (pago < precio) {
+                                    precio = precio - pago
+                                } else if (pago > precio) {
+                                    vuelto = precio - pago
+                                    alert("Su vuelto es de: " + (-vuelto) + "$")
+                                    alert("Disfrute su producto")
+                                    break;
+                                } else if (pago === precio) {
+                                    pago = precio - pago
+                                    alert("Disfrute su producto")
+                                    break;
+                                } else {
+                                    alert("ERROR")
+                                }
+                            } while (pago !== 0);
+                            tipo = 0
+                            break;
+                        case 3:
+                            do {
+                                pago = Number(prompt("Debe pagar: " + precio + "$"))
+                                if (pago < precio) {
+                                    precio = precio - pago
+                                } else if (pago > precio) {
+                                    vuelto = precio - pago
+                                    alert("Su vuelto es de: " + (-vuelto) + "$")
+                                    alert("Disfrute su producto")
+                                    break;
+                                } else if (pago === precio) {
+                                    pago = precio - pago
+                                    alert("Disfrute su producto")
+                                    break;
+                                } else {
+                                    alert("ERROR")
+                                }
+                            } while (pago !== 0);
+                            tipo = 0
+                            break;
+                        case 0:
+                            break;
+                        default:
+                            alert("ERROR")
+                            break;
+                    }
+                } while (tipo !== 0);
                 break;
             case 2:
                 tipo = Number(prompt("¿De que tipo lo desea? \n 1.Light 2.Zero 3.Normal"))
