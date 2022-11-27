@@ -1,6 +1,6 @@
 alert("BIENVENIDO USUARIO A LA MAQUINA EXPENDORA")
 do {
-    let product = Number(prompt("¿Que desea? \n 1.Coca-Cola   2.Pepsi    3.Sprite \n 4.Lays        5.Pringles    6.Doritos \n 0.No deseo nada"))
+    product = Number(prompt("¿Que desea? \n 1.Coca-Cola   2.Pepsi    3.Sprite \n 4.Lays        5.Pringles    6.Doritos \n 0.No deseo nada"))
     if (product !== 0) {
         switch (product) {
             case 1:
@@ -8,13 +8,31 @@ do {
                 precio = 100
                 switch (tipo) {
                     case 1:
-                        pago = prompt("Debe pagar: " + precio * 1.21)
+                        precio = precio * 1.21
+                        do {
+                            pago = Number(prompt("Debe pagar: " + precio + "$"))
+                            if (pago < precio) {
+                                precio = precio - pago
+                            } else if (pago > precio) {
+                                vuelto = precio - pago
+                                alert("Su vuelto es de: " + (-vuelto) + "$")
+                                alert("Disfrute su producto")
+                                break;
+                            } else if (pago === precio) {
+                                pago = precio - pago
+                                alert("Disfrute su producto")
+                                break;
+                            } else {
+                                alert("ERROR")
+                            }
+                        } while (pago !== 0);
                         break;
                     case 2:
-                        pago = prompt("Debe pagar: " + precio * 1.5)
+                        precio = precio * 1.5
+                        pago = Number(prompt("Debe pagar: " + precio + "$"))
                         break;
                     case 3:
-                        pago = prompt("Debe pagar: " + precio)
+                        pago = Number(prompt("Debe pagar: " + precio + "$"))
                         break;
                     default:
                         alert("ERROR")
@@ -26,13 +44,15 @@ do {
                 precio = 120
                 switch (tipo) {
                     case 1:
-                        pago = prompt("Debe pagar: " + precio * 1.21)
+                        precio = precio * 1.21
+                        pago = Number(prompt("Debe pagar: " + precio + "$"))
                         break;
                     case 2:
-                        pago = prompt("Debe pagar: " + precio * 1.5)
+                        precio = precio * 1.5
+                        pago = Number(prompt("Debe pagar: " + precio + "$"))
                         break;
                     case 3:
-                        pago = prompt("Debe pagar: " + precio)
+                        pago = Number(prompt("Debe pagar: " + precio + "$"))
                         break;
                     default:
                         alert("ERROR")
@@ -44,13 +64,15 @@ do {
                 precio = 140
                 switch (tipo) {
                     case 1:
-                        pago = prompt("Debe pagar: " + precio * 1.21)
+                        precio = precio * 1.21
+                        pago = Number(prompt("Debe pagar: " + precio + "$"))
                         break;
                     case 2:
-                        pago = prompt("Debe pagar: " + precio * 1.5)
+                        precio = precio * 1.5
+                        pago = Number(prompt("Debe pagar: " + precio + "$"))
                         break;
                     case 3:
-                        pago = prompt("Debe pagar: " + precio)
+                        pago = Number(prompt("Debe pagar: " + precio + "$"))
                         break;
                     default:
                         alert("ERROR")
@@ -59,12 +81,15 @@ do {
                 break;
             case 4:
                 precio = 220
+                pago = Number(prompt("Debe pagar: " + precio + "$"))
                 break;
             case 5:
                 precio = 250
+                pago = Number(prompt("Debe pagar: " + precio + "$"))
                 break;
             case 6:
                 precio = 270
+                pago = Number(prompt("Debe pagar: " + precio + "$"))
                 break;
             case 0:
                 break;
