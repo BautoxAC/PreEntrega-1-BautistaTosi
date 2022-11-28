@@ -1,4 +1,5 @@
-alert("BIENVENIDO USUARIO A LA MAQUINA EXPENDORA")
+//funciones
+//distintas formas de pagar
 function pagar() {
     do {
         pago = Number(prompt("Debe pagar: " + precio + "$"))
@@ -22,6 +23,7 @@ function pagar() {
         }
     } while (faltapagar === true);
 }
+//tipos de bebida
 function cualtipo() {
     do {
         tipo = Number(prompt("¿De que tipo lo desea? \n 1.Light 2.Zero 3.Normal 0.Volver"))
@@ -48,6 +50,9 @@ function cualtipo() {
         }
     } while (tipo !== 0);
 }
+//codigo
+alert("BIENVENIDO USUARIO A LA MAQUINA EXPENDORA")
+//distintos tipos de productos
 do {
     product = Number(prompt("¿Que desea? \n 1.Coca-Cola   2.Pepsi    3.Sprite \n 4.Lays        5.Pringles    6.Doritos \n 0.No deseo nada"))
     if (product !== 0) {
